@@ -13,3 +13,12 @@ class num():
 len_n =num() #类实例化
 len_n.hanoi(3,"a","b","c") #移动策略
 print(len_n.x) #运行次数
+
+#汉诺塔递推式h(n) = 2h(n-1)+1
+def han(n): #n为大于0的整数
+    if n == 0:
+        return 0
+    else:
+        return (han(n-1) * 2 + 1) 
+    
+print("\n", han(3))
