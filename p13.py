@@ -1,3 +1,5 @@
+import random
+from cal_time import cal_time
 #冒泡排序
 # def bubble_sorted(li):
 #     for i in range(len(li)-1): #排序将进行n-1趟，最后一个位置不需要再遍历
@@ -11,6 +13,7 @@
 # print(lis)
 
 #优化后的冒泡排序，减少空跑
+@cal_time
 def bubble_sorted1(li):
     for i in range(len(li)-1): #排序将进行n-1趟，最后一个位置不需要再遍历
         exchange = False #判断跑完一趟是否有元素交换
@@ -18,9 +21,10 @@ def bubble_sorted1(li):
             if li[j] > li[j+1]:
                 li[j],li[j+1] = li[j+1],li[j] #序列内部对调位置
                 exchange = True
-        print(li)
+        # print(li)
         if not exchange: #如果未发生交换，跳出循环，输出结果
              return 
 
-lis = [3,5,1,2,9]
+lis = list(range(10000))
+random.shuffle(lis) #打乱列表
 bubble_sorted1(lis)
