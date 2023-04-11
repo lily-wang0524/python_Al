@@ -61,12 +61,13 @@ class BST():
                 p = p.rchild # p指针往右下移
             else: # val == p.data
                 return p # 退出循环
-            return None
+            # retrun None # 如果return在while里，运行了if或elif，会直接运行return，除非一开始就运行else，才会return p
+        return None
 
 li = list(range(0,10,2)) # 0-9的偶数
 random.shuffle(li)
 tree = BST(li) # 创建树
 node = tree.root
 # print(node.data)
-print(tree.query(node, 5)) # 递归
+# print(tree.query(node, 5)) # 递归
 print(tree.query_no_rec(4)) # 非递归
