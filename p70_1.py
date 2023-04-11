@@ -14,7 +14,7 @@ class BST():
 
     # 递归插入
     def insert(self, node, val): # node是指二叉树中当前指向的节点，初始一般为根节点，val是指插入的值
-        if not node or node.data == val:  # 空树或节点的值与插入的值相同
+        if not node or node.data == val:  # 该节点不存在或节点的值与插入的值相同
             node = BiTreeNode(val) # 创建一个节点插入到树中（最后一步）或者是插入的值的节点直接与原节点相重合
         
         elif val < node.data:  # 插入的值小于当前节点的值
