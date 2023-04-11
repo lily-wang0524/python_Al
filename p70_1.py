@@ -20,12 +20,10 @@ class BST():
         elif val < node.data:  # 插入的值小于当前节点的值
             # 往当前节点的左边插,当前节点的也就往左孩子找
             node.lchild = self.insert(node.lchild,val) # 左孩子为根节点的子树上，node.lchild(当前点的左孩子) = node(插入的节点)
-            # node = self.insert(node.lchild,val) # node为最终返回的插入节点
-            # node.lchild.parent = node  # 视频写错了,node是叶子节点，与父节点的连接不能通过这种方式
-                    
+            node.lchild.parent = node  # 连接父节点
         else:  # val > node.data
             node.rchild = self.insert(node.rchild,val) # 当前节点的右孩子是插入的节点
-            # node.rchild.parent = node  
+            node.rchild.parent = node # 连接父节点 
 
         return node # 返回
 
